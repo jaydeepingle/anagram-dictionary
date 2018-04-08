@@ -1,14 +1,25 @@
-package Part2;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @author jaydeep
+ */
 public class Solution {
-    public Solution () {
+    /**
+     * Constructor Function
+     */
+    public Solution() {
 
     }
+
+    /**
+     * This functions helps user in searching the anagrams within the dictionary
+     *
+     * @param map
+     */
     public static void searchAnagrams(HashMap<String, ArrayList<String>> map) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n\nAnagramFinder>");
@@ -38,17 +49,21 @@ public class Solution {
         }
     }
 
+    /**
+     * This method loads the entire Dictionary
+     *
+     * @param bufferedReader
+     * @param map
+     */
     public static void loadDictionary(BufferedReader bufferedReader, HashMap<String, ArrayList<String>> map) {
         String line;
         long start_time = System.currentTimeMillis();
         try {
             while ((line = bufferedReader.readLine()) != null) {
                 line = line.trim();
-
                 char[] charArray = line.toCharArray();
                 Arrays.sort(charArray);
                 String sortedString = String.valueOf(charArray);
-
                 if (map.containsKey(sortedString)) {
                     map.get(sortedString).add(line);
                 } else {
@@ -63,6 +78,12 @@ public class Solution {
         System.out.println("Dictionary loaded in " + (load_time - start_time) + " ms");
     }
 
+    /**
+     * This method accepts the fileName and returns the BufferedReader object
+     *
+     * @param fileName
+     * @return bufferedReader
+     */
     public static BufferedReader getFileReaders(String fileName) {
         FileReader fileReader;
         BufferedReader bufferedReader = null;
@@ -75,6 +96,11 @@ public class Solution {
         return bufferedReader;
     }
 
+    /**
+     * Main method - It accepts the fileName
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Welcome to the Anagram Finder");
         System.out.println("-----------------------------");

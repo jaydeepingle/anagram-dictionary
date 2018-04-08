@@ -1,11 +1,18 @@
-package Part1;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @author jaydeep
+ */
 public class Solution {
+    /**
+     * Main method - It does all the operations
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Welcome to the Anagram Finder");
         System.out.println("-----------------------------");
@@ -25,7 +32,7 @@ public class Solution {
                 char[] myString = line.trim().toCharArray();
                 Arrays.sort(myString);
                 String s2 = String.valueOf(myString);
-                if(map.containsKey(s2)) {
+                if (map.containsKey(s2)) {
                     map.get(s2).add(line.trim());
                 } else {
                     map.put(s2, new ArrayList<String>());
@@ -40,9 +47,9 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         System.out.println("");
         System.out.print("AnagramFinder>");
-        while(sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             String str = sc.nextLine();
-            if(str.equals("exit")) {
+            if (str.equals("exit")) {
                 System.exit(0);
             } else {
                 long t1 = System.currentTimeMillis();
