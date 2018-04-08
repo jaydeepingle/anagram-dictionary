@@ -1,9 +1,9 @@
-# anagram-dictionary
+##Anagrams in a Dictionary
 The program allows to find anagrams of a given word in the dictionary
 --------------------------------------------------------------------------------------------
 **Author**
-Jaydeep Digambar Ingle
-Email: jingle1@binghamton.edu
+Name: Jaydeep Digambar Ingle<br/>
+Email: jingle1@binghamton.edu<br/>
 
 --------------------------------------------------------------------------------------------
 **Description:**
@@ -11,10 +11,10 @@ Email: jingle1@binghamton.edu
 This part consists of messy code. No modularization.
 
 - ```Part2```</br>
-Code is divided into functions such as
-```getFileReader()```
-```loadDictionary()```
-```searchAnagrams()```
+Code is divided into functions such as <br/>
+```getFileReader()```<br/>
+```loadDictionary()```<br/>
+```searchAnagrams()```<br/>
 
 --------------------------------------------------------------------------------------------
 **Steps:**
