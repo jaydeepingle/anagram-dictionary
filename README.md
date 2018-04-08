@@ -1,4 +1,4 @@
-*Anagrams in a Dictionary*
+*Anagrams in a Dictionary*<br />
 **The program allows to find anagrams of a given word in the dictionary**
 --------------------------------------------------------------------------------------------
 **Author**<br/>
