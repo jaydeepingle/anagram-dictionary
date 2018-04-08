@@ -1,3 +1,4 @@
+package Part2;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,28 +10,28 @@ public class Solution {
 
     }
     public static void searchAnagrams(HashMap<String, ArrayList<String>> map) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("\n\nAnagramFinder>");
-        long t1, t2;
-        while (sc.hasNextLine()) {
-            String str = sc.nextLine();
+        long start, end;
+        while (scanner.hasNextLine()) {
+            String str = scanner.nextLine();
             if (str.equals("exit")) {
                 System.exit(0);
             } else {
-                t1 = System.currentTimeMillis();
-                char[] myString = str.toCharArray();
-                Arrays.sort(myString);
-                String s2 = String.valueOf(myString);
-                if (map.containsKey(s2) && map.get(s2).size() >= 2) {
-                    t2 = System.currentTimeMillis();
-                    System.out.println(map.get(s2).size() + " Anagrams found for " + str + " in " + (t2 - t1) + " ms");
-                    for (int i = 0; i < map.get(s2).size() - 1; i++) {
-                        System.out.print(map.get(s2).get(i) + ",");
+                start = System.currentTimeMillis();
+                char[] charArray = str.toCharArray();
+                Arrays.sort(charArray);
+                String sortedString = String.valueOf(charArray);
+                if (map.containsKey(sortedString) && map.get(sortedString).size() >= 2) {
+                    end = System.currentTimeMillis();
+                    System.out.println(map.get(sortedString).size() + " Anagrams found for " + str + " in " + (end - start) + " ms");
+                    for (int i = 0; i < map.get(sortedString).size() - 1; i++) {
+                        System.out.print(map.get(sortedString).get(i) + ",");
                     }
-                    System.out.print(map.get(s2).get(map.get(s2).size() - 1) + " ");
+                    System.out.print(map.get(sortedString).get(map.get(sortedString).size() - 1) + " ");
                 } else {
-                    t2 = System.currentTimeMillis();
-                    System.out.println("No anagrams found for " + str + " in " + (t2 - t1) + " ms");
+                    end = System.currentTimeMillis();
+                    System.out.println("No anagrams found for " + str + " in " + (end - start) + " ms");
                 }
             }
             System.out.print("\n\nAnagramFinder>");
@@ -44,15 +45,15 @@ public class Solution {
             while ((line = bufferedReader.readLine()) != null) {
                 line = line.trim();
 
-                char[] myString = line.toCharArray();
-                Arrays.sort(myString);
-                String s2 = String.valueOf(myString);
+                char[] charArray = line.toCharArray();
+                Arrays.sort(charArray);
+                String sortedString = String.valueOf(charArray);
 
-                if (map.containsKey(s2)) {
-                    map.get(s2).add(line);
+                if (map.containsKey(sortedString)) {
+                    map.get(sortedString).add(line);
                 } else {
-                    map.put(s2, new ArrayList<String>());
-                    map.get(s2).add(line);
+                    map.put(sortedString, new ArrayList<String>());
+                    map.get(sortedString).add(line);
                 }
             }
         } catch (IOException e) {
