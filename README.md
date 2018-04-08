@@ -1,7 +1,7 @@
-##Anagrams in a Dictionary
-The program allows to find anagrams of a given word in the dictionary
+*Anagrams in a Dictionary*
+**The program allows to find anagrams of a given word in the dictionary**
 --------------------------------------------------------------------------------------------
-**Author**
+**Author**<br/>
 Name: Jaydeep Digambar Ingle<br/>
 Email: jingle1@binghamton.edu<br/>
 
